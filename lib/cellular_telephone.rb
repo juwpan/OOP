@@ -1,4 +1,4 @@
-# Наследование от класса Telephone свойств, методов и переменных
+# Класс CellularTelephone наследуется от класса Telephone и расширяет его свойствами color и type
 
 class CellularTelephone < Telephone
   # Инкапсуляция (можно получить данные свойств но не изменять их)

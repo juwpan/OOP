@@ -1,4 +1,5 @@
-# Создание абстрактного класса Telephone
+# Класс MechanicalTelephone наследуется от класса Telephone и расширяет его свойствами color и type
+
 class MechanicalTelephone < Telephone
   # Инкапсуляция (можно получить данные свойств но не изменять их)
   attr_reader :type, :color
@@ -42,15 +43,11 @@ class MechanicalTelephone < Telephone
   # В зависимоти от ответа будет выводить вариант ответа или звонок удался или нет
   def stop_call(answer)
     if answer == 'Yes'
-      rand(@@beep).times do
-        puts 'Гудок!'
-      end
-        response
+      rand(@@beep).times { puts 'Beep!' }
+      response
     else
-      @@beep.times do
-        puts 'Гудок!'
-      end
-        mistake_call
+      @@beep.times { puts 'Beep!' }
+      mistake_call
     end
   end
 end

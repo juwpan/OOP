@@ -46,15 +46,11 @@ class Telephone
   # В зависимоти от ответа будет выводить вариант ответа или звонок удался или нет
   def stop_call(answer)
     if answer == 'Yes'
-      rand(@@beep).times do
-        puts 'Beep!'
-      end
-        response
+      rand(@@beep).times { puts 'Beep!' }
+      response
     else
-      @@beep.times do
-        puts 'Beep!'
-      end
-        mistake_call
+      @@beep.times { puts 'Beep!' }
+      mistake_call
     end
   end
 end
