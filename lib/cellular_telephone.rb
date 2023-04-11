@@ -12,7 +12,7 @@ class CellularTelephone < Telephone
     @color = color
   end
 
-  # Полиорфизм от класса CellularTelephone вывод данных о телефоне
+  # Полиорфизм от класса to_s вывод данных о телефоне
   def to_s
     super
     puts <<~TELEPHONE
