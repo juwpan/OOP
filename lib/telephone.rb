@@ -16,6 +16,7 @@ class Telephone
     stop_call(answer)
   end
   
+  # Полиорфизм класса to_s
   def to_s
     "It's your telephone:\n"\
     "Model: #{@model}\n"\

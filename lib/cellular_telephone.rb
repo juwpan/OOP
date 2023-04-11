@@ -15,6 +15,7 @@ class CellularTelephone < Telephone
     stop_call_rus(answer)
   end
 
+  # Полиорфизм от класса CellularTelephone
   def to_s
     super + "color: #{color}"
   end
