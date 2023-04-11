@@ -11,10 +11,10 @@ class MechanicalTelephone < Telephone
     @color = color
   end
 
-  # Полиморфизм (от класса Telephone реализация в ином виде)
+  # Полиморфизм (от класса Telephone здесь реализация в ином виде)
   def call(array_answers)
     answer = array_answers.sample
-    stop_call_rus(answer)
+    stop_call(answer)
   end
   
   # Полиорфизм от класса to_s выводит данные о телефоне  c наследованием от Telephone
@@ -40,7 +40,7 @@ class MechanicalTelephone < Telephone
   end
 
   # В зависимоти от ответа будет выводить вариант ответа или звонок удался или нет
-  def stop_call_rus(answer)
+  def stop_call(answer)
     if answer == 'Yes'
       rand(@@beep).times do
         puts 'Гудок!'

@@ -14,7 +14,7 @@ class Telephone
     @number = number
   end
 
-  # Полиморфизм.В классах CellularTelephone и MechanicalTelephone реализация в ином виде
+  # Полиморфизм.В классе MechanicalTelephone реализация в ином виде
   def call(array_answers)
     answer = array_answers.sample
     stop_call(answer)
