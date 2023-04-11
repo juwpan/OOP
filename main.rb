@@ -23,7 +23,7 @@ puts '----------'
 if tel_call.instance_of?(Telephone)
   puts tel_cellular.call(array_answers)
   puts '----------'
-  puts "The call was made from"
+  puts "The call was made with"
   "#{tel_cellular}"
 else
   puts tel_mechanical.call(array_answers)
