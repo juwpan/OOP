@@ -4,24 +4,26 @@ class Telephone
   @@beep = 10
 
   # Инкапсуляция (можно получить данные свойств но не изменять их)
-  attr_reader :model, :manufacturer, :county
+  attr_reader :model, :manufacturer, :county, :number
 
   # Конструтор класса  Telephone с начальными свойствами
-  def initialize(model, manufacturer, county)
+  def initialize(number, model, manufacturer, county)
     @model = model
     @manufacturer = manufacturer
     @county = county
+    @number = number
   end
 
-  # Полиорфизм (в классе CellularTelephone реализация в ином виде
+  # Полиморфизм.В классах CellularTelephone и MechanicalTelephone реализация в ином виде
   def call(array_answers)
     answer = array_answers.sample
     stop_call(answer)
   end
   
-  # Полиорфизм от класса to_s выводит данные о телефоне
+  # Полиморфизм от класса to_s выводит данные о телефоне
   def to_s
     puts <<~TELEPHONE
+    Number: #{@number}
     Model: #{@model}
     Manufacturer: #{@manufacturer}
     County: #{@county}
@@ -33,24 +35,24 @@ class Telephone
 
   # Возвращает ответ если звонок удался
   def response
-    'Да.Слушаю?'
+    'Yes,Hi!'
   end
 
   # Возвращает ответ если зволнок не удался
   def mistake_call
-    'Абонент занят или в не зоны доступа...перезвоните позже'
+    'Subscriber busy... call back later'
   end
 
   # В зависимоти от ответа будет выводить вариант ответа или звонок удался или нет
   def stop_call(answer)
     if answer == 'Yes'
       rand(@@beep).times do
-        puts 'Гудок!'
+        puts 'Beep!'
       end
         response
     else
       @@beep.times do
-        puts 'Гудок!'
+        puts 'Beep!'
       end
         mistake_call
     end

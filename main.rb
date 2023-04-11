@@ -1,11 +1,12 @@
 require_relative 'lib/telephone'
 require_relative 'lib/cellular_telephone'
+require_relative 'lib/mechanical_telephone'
 
-# Создаем эксемлпяр класса Telephone
-tel_mechanical = Telephone.new('ТАН-6м', 'Пермский телефонный завод', 'СССР')
+# Создаем эксемлпяр класса MechanicalTelephone
+tel_mechanical = MechanicalTelephone.new('4-18-43', 'ТАН-6м', 'Пермский телефонный завод', 'СССР', 'механический', 'красный')
 
 # Создаем эксемлпяр класса CellularTelephone
-tel_cellular = CellularTelephone.new('c200', 'samsung', 'South Korean', 'cellular', 'black')
+tel_cellular = CellularTelephone.new('8(976)162-40-56', 'c200', 'samsung', 'South Korean', 'cellular', 'black')
 
 # Массив ответов на звонок(ответил на звонок или нет)
 array_answers = %w[Yes No]
@@ -20,7 +21,7 @@ puts 'You start calling'
 puts '----------'
 
 # Возвращает риализацию экземпляра в зависимости к какому классу принадлежит
-if tel_call.instance_of?(Telephone)
+if tel_call.instance_of?(CellularTelephone)
   puts tel_cellular.call(array_answers)
   puts '----------'
   puts "The call was made with"
@@ -31,8 +32,3 @@ else
   "Звонок был совершён c"
   "#{tel_mechanical}"
 end
-
-# Это работать не будет т.к применена инкапсуляция 
-# для этого метода в классе CellularTelephone
-
-# puts tel.response_rus
